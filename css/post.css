@@ -1,0 +1,187 @@
+.post {
+    display: inline-block;
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 40px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #fff;
+}
+    .post > .header {
+        display: inline-block;
+        width: 100%;
+    }
+        .post > .header > img {
+            display: inline-block;
+            width: 50px;
+            height: 50px;
+            float: left;
+            object-fit: cover;
+            object-position: center;
+            border-radius: 50%;
+        }
+        .post > .header > .texts {
+            display: inline-block;
+            width: calc(100% - 90px);
+            padding-left: 20px;
+            float: left;
+        }
+            .post > .header .title {
+                display: inline-block;
+                width: 100%;
+                margin-bottom: 5px;
+            }
+                .post .title > a {
+                    display: inline-block;
+                    font-size: 18px;
+                    line-height: 25px;
+                }
+            .post > .header .time {
+                display: inline-block;
+                width: 100%;
+                font-size: 14px;
+                line-height: 20px;
+            }
+        .post > .header > .fa {
+            display: inline-block;
+            width: 40px;
+            padding: 10px;
+            margin: -10px -10px 0 0;
+            float: right;
+            text-align: center;
+        }
+    .post > .content {
+        display: inline-block;
+        width: 100%;
+        padding: 10px 0;
+        font-size: 16px;
+        line-height: 22px;
+    }
+        .post > .content > p {
+            display: inline-block;
+            width: 100%;
+        }
+        .post > .content > p + .gallery {
+            margin-top: 20px;
+        }
+        .post > .content > .gallery {
+            display: inline-block;
+            width: calc(100% + 20px);
+            margin: 0 0 -10px -10px;
+            height: 280px;
+            overflow: hidden;
+            position: relative;
+        }
+            .post .gallery > img {
+                display: inline-block;
+                width: 100%;
+                height: 100%;
+                float: left;
+                object-fit: cover;
+                object-position: center;
+            }
+        .post > .content > .gallery.gallery-2 {
+            height: 360px;
+        }
+            .post .gallery.gallery-2 > img {
+                width: 50%;
+            }
+        .post > .content > .gallery.gallery-3 {
+            height: 360px;
+        }
+            .post .gallery.gallery-3 > img {
+                height: 50%;
+            }
+            .post .gallery.gallery-3 > img:nth-child(2),
+            .post .gallery.gallery-3 > img:nth-child(3) {
+                width: 50%;
+            }
+        .post > .content > .gallery.gallery-4 {
+            height: 420px;
+        }
+            .post .gallery.gallery-4 > img {
+                width: 50%;
+            }
+            .post .gallery.gallery-4 > img:nth-child(2),
+            .post .gallery.gallery-4 > img:nth-child(3),
+            .post .gallery.gallery-4 > img:nth-child(4) {
+                height: calc(100% / 3);
+                float: right;
+            }
+        .post .gallery > .more {
+            display: inline-block;
+            width: 50%;
+            height: calc(100% / 3);
+            background-color: #000b;
+            color: #fff;
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            font-size: 70px;
+            text-align: center;
+            line-height: 140px;
+        }
+    .post > .footer {
+        display: inline-block;
+        width: 100%;
+    }
+        .post > .footer > .row {
+            display: inline-block;
+            width: 100%;
+            padding: 10px 0;
+            border-top: 1px solid #ccc;
+        }
+            .post > .footer .action {
+                display: inline-block;
+                width: 50%;
+                float: left;
+                text-align: center;
+                font-size: 20px;
+                line-height: 30px;
+            }
+                .post .action > .fa {
+                    display: inline-block;
+                    line-height: inherit;
+                }
+                .post .action > .text {
+                    display: inline-block;
+                }
+            .post > .footer img {
+                display: inline-block;
+                width: 36px;
+                height: 36px;
+                object-fit: cover;
+                object-position: center;
+                float: left;
+            }
+            .post > .footer .comment-form {
+                display: inline-block;
+                width: calc(100% - 50px);
+                float: right;
+                position: relative;
+            }
+                .post .comment-form > textarea {
+                    display: inline-block;
+                    width: 100%;
+                    height: 36px;
+                    min-height: 36px;
+                    max-height: 150px;
+                    border-radius: 18px;
+                    font-size: 20px;
+                    line-height: 25px;
+                    padding: 5px 10px;
+                    resize: vertical;
+                }
+                .post .comment-form > .interactions {
+                    display: inline-block;
+                    position: absolute;
+                    right: 10px;
+                    bottom: 10px;
+                }
+                    .post .interactions > .fa {
+                        display: inline-block;
+                        float: left;
+                        padding: 0 5px;
+                        line-height: 15px;
+                        font-size: 15px;
+                    }
