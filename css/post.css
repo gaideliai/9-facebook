@@ -90,6 +90,11 @@
                 background-color: orange;
                 color: #333;                
             }
+            .post p > span.more {
+                color: var(--main-color);
+                text-transform: capitalize;
+                cursor: pointer;
+            }
         .post > .content > p + .gallery {
             margin-top: 20px;
         }

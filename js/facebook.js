@@ -60,6 +60,7 @@ function renderPostContent( content ) {
 
 function renderPostContentText( content ) {
     const maxTextLength = 240;
+    const maxText = 340;
     const smallestTextLength = 30;
     
     let HTML = '';
@@ -76,9 +77,20 @@ function renderPostContentText( content ) {
         }
     }
 
+    if (text.length >= maxText){
+        text = text.substring ( 0, maxTextLength);
+        let skipSymbols = 0;
+        for (let i = maxTextLength-1; i >=0; i--) {
+            if ( text[i] === ' ') {
+                break;
+            }
+            skipSymbols++;            
+        }
+        text = text.substring(0, maxTextLength-skipSymbols-1);
+        text += '... <span class="more">Read more</span>'
+    }
 
-
-    HTML = `<p class="${style}">${text}</p>`;
+    HTML = `<p class="${style}" data-fulltext="${content.text}">${text}</p>`;
 
     return HTML;
 }
@@ -157,3 +169,16 @@ function convertTime( timestamp ) {
 }
 
 renderFeed( feed );
+
+const readMores = document.querySelectorAll('.post p > .more');
+
+for ( let i=0; i<readMores.length; i++ ) {
+    const readMore = readMores[i];
+    readMore.addEventListener('click', readMoreClick );
+}
+
+function readMoreClick( event ) {
+    const p = event.target.closest('p');
+    const fullText = p.dataset.fulltext;
+    return p.innerText = fullText;
+}
