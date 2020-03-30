@@ -21,9 +21,9 @@ const feed = [
     // }
     {
         author: {
-            name: 'Vardenis',
-            surname: 'Pavardenis',
-            img: 'user.png',
+            name: 'Chuck',
+            surname: 'Norris',
+            img: 'chuck.jpg',
             link: '#'
         },
         time: 1583832433393,
@@ -33,9 +33,9 @@ const feed = [
     },
     {
         author: {
-            name: 'Vardenis2',
-            surname: 'Pavardenis',
-            img: 'user.png',
+            name: 'Chuck',
+            surname: 'Norris',
+            img: 'chuck.jpg',
             link: '#'
         },
         time: 1583832433393,
@@ -45,9 +45,9 @@ const feed = [
     },
     {
         author: {
-            name: 'Vardenis3',
-            surname: 'Pavardenis',
-            img: 'user.png',
+            name: 'Chuck',
+            surname: 'Norris',
+            img: 'chuck.jpg',
             link: '#'
         },
         time: 1583832433393,
@@ -60,9 +60,9 @@ const feed = [
     },
     {
         author: {
-            name: 'Vardenis',
-            surname: 'Pavardenis',
-            img: 'user.png',
+            name: 'Chuck',
+            surname: 'Norris',
+            img: 'chuck.jpg',
             link: '#'
         },
         time: 1583832433393,
@@ -76,9 +76,9 @@ const feed = [
     },
     {
         author: {
-            name: 'Vardenis',
-            surname: 'Pavardenis',
-            img: 'user.png',
+            name: 'Chuck',
+            surname: 'Norris',
+            img: 'chuck.jpg',
             link: '#'
         },
         time: 1583832433393,
@@ -93,9 +93,9 @@ const feed = [
     },
     {
         author: {
-            name: 'Vardenis',
-            surname: 'Pavardenis',
-            img: 'user.png',
+            name: 'Chuck',
+            surname: 'Norris',
+            img: 'chuck.jpg',
             link: '#'
         },
         time: 1583832433393,
@@ -111,9 +111,9 @@ const feed = [
     },
     {
         author: {
-            name: 'Vardenis',
-            surname: 'Pavardenis',
-            img: 'user.png',
+            name: 'Chuck',
+            surname: 'Norris',
+            img: 'chuck.jpg',
             link: '#'
         },
         time: 1583832433393,
@@ -132,9 +132,9 @@ const feed = [
     },
     {
         author: {
-            name: 'Vardenis',
-            surname: 'Pavardenis',
-            img: 'user.png',
+            name: 'Chuck',
+            surname: 'Norris',
+            img: 'chuck.jpg',
             link: '#'
         },
         time: 1583832433393,
@@ -144,9 +144,9 @@ const feed = [
     },
     {
         author: {
-            name: 'Vardenis',
-            surname: 'Pavardenis',
-            img: 'user.png',
+            name: 'Chuck',
+            surname: 'Norris',
+            img: 'chuck.jpg',
             link: '#'
         },
         time: 1583832433393,

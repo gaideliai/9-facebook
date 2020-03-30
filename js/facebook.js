@@ -19,8 +19,7 @@ function renderFeed( data ) {
     return document.querySelector('.feed').innerHTML = HTML;
 }
 
-function renderPost( data ) {
-    console.log('-----------------');
+function renderPost( data ) {    
     let HTML = `<div class="post">
                     ${renderPostHeader( data.author, data.time )}
                     ${renderPostContent( data.content )}
@@ -38,7 +37,7 @@ function renderPostHeader( author, time ) {
                     <div class="title">
                         <a href="${author.link}">${author.name} ${author.surname}</a>
                     </div>
-                    <div class="time">${time}</div>
+                    <div class="time">${convertTime(time)}</div>
                 </div>
                 <i class="fa fa-ellipsis-h"></i>
             </div>`;
@@ -49,7 +48,7 @@ function renderPostHeader( author, time ) {
 function renderPostContent( content ) {
     let HTML = '<div class="content">';
     if ( content.text ) {
-        HTML += renderPostContentText( content.text, content.background );
+        HTML += renderPostContentText( content );
     }
     if ( content.images ) {
         HTML += renderPostContentGallery( content.images );
@@ -59,16 +58,32 @@ function renderPostContent( content ) {
     return HTML;
 }
 
-function renderPostContentText( text, background ) {
+function renderPostContentText( content ) {
+    const maxTextLength = 240;
+    const smallestTextLength = 30;
+    
     let HTML = '';
+    let style = '';
+    let text = content.text;
 
-    HTML = `<p>${text}</p>`;
+    if (text.length <= smallestTextLength) {
+        style += 'big-text';
+    }
+
+    if (content.background) {
+        if (!content.images || content.images.length === 0) {
+            style += ' background '+content.background;
+        }
+    }
+
+
+
+    HTML = `<p class="${style}">${text}</p>`;
 
     return HTML;
 }
 
-function renderPostContentGallery( images ) {
-    console.log(images);
+function renderPostContentGallery( images ) {    
     let HTML = '';
     let imgHTML = '';
     let moreHTML = '';
@@ -112,7 +127,7 @@ function renderPostFooter() {
     return `<div class="footer">
                 <div class="row">
                     <div class="action">
-                        <i class="fa fa-thumbs-up"></i>
+                        <i class="fa fa-thumbs-o-up"></i>
                         <div class="text">Like</div>
                     </div>
                     <div class="action">
@@ -133,6 +148,12 @@ function renderPostFooter() {
                     </div>
                 </div>
             </div>`;
+}
+
+function convertTime( timestamp ) {
+    let time = '';
+    time = '6h';
+    return time;
 }
 
 renderFeed( feed );

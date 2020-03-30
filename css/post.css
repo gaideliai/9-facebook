@@ -61,6 +61,35 @@
             display: inline-block;
             width: 100%;
         }
+            .post > .content > p.big-text {                
+                font-size: 28px;
+                line-height: 40px;
+            }
+            .post > .content > p.background {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: calc(100% + 20px);
+                height: 280px;
+                margin: 0 0 -10px -10px;                
+                text-align: center;
+            }
+            .post > .content > p.red {                
+                background-color: red;
+                color: #fff;                
+            }
+            .post > .content > p.blue {                
+                background-color: blue;
+                color: #fff;                
+            }
+            .post > .content > p.green {                
+                background-color: green;
+                color: #fff;                
+            }
+            .post > .content > p.orange {                
+                background-color: orange;
+                color: #333;                
+            }
         .post > .content > p + .gallery {
             margin-top: 20px;
         }
