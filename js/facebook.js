@@ -177,7 +177,7 @@ function convertTime( timestamp ) {
     // 1m-59m - [x]m
     let minutes = Math.round(seconds / 60);
     if ( minutes < 60 ) {
-        return minutes+'min';
+        return minutes+'m';
     }
     // 24h
     let hours = minutes / 60;
@@ -197,13 +197,29 @@ function convertTime( timestamp ) {
     // 12m
     let months = Math.floor(days / 30);
     if ( months < 12 ) {
-        return months+'m';
+        return months+'mth';
     }
     // 1y++
     return Math.floor(days / 365)+'y';
 }
 
-renderFeed( feed );
+// renderFeed( feed );
+
+function dataRequest () {
+    var xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+        // Typical action to be performed when the document is ready:
+        renderFeed (JSON.parse(xhttp.responseText));
+        }
+    };
+    xhttp.open("GET", "https://gaideliai.github.io/9-facebook/server/data.json", true);
+    xhttp.send();
+}
+
+dataRequest ()
+
+
 
 const readMores = document.querySelectorAll('.post p > .more');
 
