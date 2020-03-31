@@ -15,8 +15,16 @@ function renderFeed( data ) {
         const postData = data[i];
         HTML += renderPost(postData);
     }
+    document.querySelector('.feed').innerHTML = HTML;
 
-    return document.querySelector('.feed').innerHTML = HTML;
+    const readMores = document.querySelectorAll('.post p > .more');
+
+    for ( let i=0; i<readMores.length; i++ ) {
+        const readMore = readMores[i];
+        readMore.addEventListener('click', readMoreClick );
+    }  
+      
+    return;
 }
 
 function renderPost( data ) {    
@@ -24,7 +32,7 @@ function renderPost( data ) {
                     ${renderPostHeader( data.author, data.time )}
                     ${renderPostContent( data.content )}
                     ${renderPostFooter()}
-                </div>`;
+                </div>`;            
     return HTML;
 }
 
@@ -203,33 +211,24 @@ function convertTime( timestamp ) {
     return Math.floor(days / 365)+'y';
 }
 
-// renderFeed( feed );
-
-function dataRequest () {
-    var xhttp = new XMLHttpRequest();
-    xhttp.onreadystatechange = function() {
-        if (this.readyState == 4 && this.status == 200) {
-        // Typical action to be performed when the document is ready:
-        renderFeed (JSON.parse(xhttp.responseText));
-        }
-    };
-    xhttp.open("GET", "https://gaideliai.github.io/9-facebook/server/data.json", true);
-    xhttp.send();
-}
-
-dataRequest ()
-
-
-
-const readMores = document.querySelectorAll('.post p > .more');
-
-for ( let i=0; i<readMores.length; i++ ) {
-    const readMore = readMores[i];
-    readMore.addEventListener('click', readMoreClick );
-}
-
 function readMoreClick( event ) {
     const p = event.target.closest('p');
     const fullText = p.dataset.fulltext;
     return p.innerText = fullText;
 }
+
+// renderFeed( feed );
+
+function dataRequest ( filename, callback ) {
+    var xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+        // Typical action to be performed when the document is ready:
+        callback (JSON.parse(xhttp.responseText));
+        }
+    };
+    xhttp.open("GET", "https://gaideliai.github.io/9-facebook/server/"+filename, true);
+    xhttp.send();
+}
+
+dataRequest ('data.json', renderFeed);
